@@ -56,7 +56,7 @@ export const Chart = styled.div`
   height: 100%;
   background: #ffffff;
   border-radius: 12px;
-  padding: 30px 20px;
+  padding: 30px;
 `;
 
 // Content
@@ -64,5 +64,5 @@ export const Content = styled.div`
   width: 100%;
   background: #ffffff;
   border-radius: 12px;
-  padding: 30px 20px;
+  padding: 30px;
 `;

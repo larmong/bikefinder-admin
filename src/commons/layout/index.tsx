@@ -15,11 +15,11 @@ const Wrapper = styled.div`
 const Contents = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 70px;
+  gap: 20px;
   background: #f8f8f8;
-  width: ${(props: IIsOpen) =>
-    props.isOpen ? "calc(100% - 90px)" : "calc(100% - 300px)"};
-  padding: ${(props: IIsOpen) => (props.isOpen ? "20px" : "30px")};
+  width: 100%;
+  padding: ${(props: IIsOpen) =>
+    props.isOpen ? "30px 30px 30px 120px" : "30px 30px 30px 330px"};
 `;
 const Page = styled.div`
   min-width: 1000px;

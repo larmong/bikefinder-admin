@@ -2,6 +2,8 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   display: flex;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
 `;
 
 export const IconGroup = styled.div`

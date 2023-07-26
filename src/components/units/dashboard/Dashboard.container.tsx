@@ -1,13 +1,12 @@
 import * as S from "./Dashboard.style";
-import { BsFillPlusSquareFill } from "react-icons/bs";
 import UserChart from "./chart/UserChart.container";
 import PaymentChart from "./chart/PaymentChart.container";
-import { collection, getDocs, limit, orderBy, query } from "firebase/firestore";
+import DashboardFaq from "./board/Board.container";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { BsFillPlusSquareFill } from "react-icons/bs";
+import { collection, getDocs, limit, orderBy, query } from "firebase/firestore";
 import { db } from "../../../commons/libraries/firebase/firebase.config";
-import DashboardFaq from "./board/Board.container";
-import { Content } from "./Dashboard.style";
 import { CustomMouseEvent } from "../../../commons/types/global.types";
 
 export default function Dashboard() {
@@ -26,7 +25,7 @@ export default function Dashboard() {
         let boardQuery = query(
           boardCollection,
           orderBy("date", "desc"),
-          limit(5)
+          limit(10)
         );
 
         const data = await getDocs(boardQuery);

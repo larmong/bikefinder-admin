@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c314f12d-c53e-4d70-b5d9-c01d63c718a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/commons/utils/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/units/dashboard/board/Board.container.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/units/dashboard/board/Board.style.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commons/layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/commons/layout/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/commons/layout/header/Header.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/layout/header/Header.style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/commons/layout/nav/Nav.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/layout/nav/Nav.style.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/units/dashboard/Dashboard.container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/units/dashboard/Dashboard.container.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/units/dashboard/Dashboard.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/units/dashboard/Dashboard.style.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +65,7 @@
       <updated>1690273322677</updated>
       <workItem from="1690273323722" duration="1516000" />
       <workItem from="1690274853160" duration="11323000" />
-      <workItem from="1690292424277" duration="25001000" />
+      <workItem from="1690292424277" duration="26289000" />
     </task>
     <servers />
   </component>

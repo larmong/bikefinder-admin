@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { IIsOpen } from "./Nav.types";
 
 export const Nav = styled.div`
+  position: fixed;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -17,7 +18,8 @@ export const NavTop = styled.div`
   gap: ${(props: IIsOpen) => (props.isOpen ? "20px" : "0px")};
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 30px;
+  padding-bottom: 35px;
+  padding-top: 5px;
 `;
 
 export const LogoWrapper = styled.div`
