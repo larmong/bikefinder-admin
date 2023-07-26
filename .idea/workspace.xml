@@ -5,18 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c314f12d-c53e-4d70-b5d9-c01d63c718a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/commons/layout/nav/Nav.container.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/commons/layout/nav/Nav.presenter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/commons/layout/nav/Nav.style.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/commons/layout/nav/Nav.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/commons/layout/nav/menu/Menu.container.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/commons/layout/nav/menu/Menu.style.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/user/admin/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/user/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/user/member/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/units/dashboard/Dashboard.container.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/units/dashboard/Dashboard.style.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/units/dashboard/Dashboard.types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/units/user/User.container.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/units/user/User.style.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/units/user/User.types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/units/user/admin/Admin.container.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/units/user/admin/Admin.style.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/units/user/admin/Admin.types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/units/user/member/Member.container.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/units/user/member/Member.style.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/units/user/member/Member.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/thirteen.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vercel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commons/layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/commons/layout/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commons/store/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/commons/store/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/commons/layout/nav/Nav.container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/layout/nav/Nav.container.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/commons/layout/nav/menu/Menu.container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/layout/nav/menu/Menu.container.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/commons/layout/nav/menu/Menu.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/layout/nav/menu/Menu.style.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +51,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/larmong/Desktop/portfolio/bike-finder-admin/src/components/commons/layout/nav/menu",
+    "last_opened_file_path": "/Users/larmong/Desktop/portfolio/bike-finder-admin/src/components/commons/layout",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -54,9 +65,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components/commons/layout/nav/menu" />
+      <recent name="$PROJECT_DIR$/src/components/commons/layout" />
       <recent name="$PROJECT_DIR$/src/components/commons/layout/footer" />
-      <recent name="$PROJECT_DIR$/src/components/commons/layout/nav" />
+      <recent name="$PROJECT_DIR$/src/components/units/dashboard" />
+      <recent name="$PROJECT_DIR$/src/components/units/user/admin" />
+      <recent name="$PROJECT_DIR$/src/components/units/user/member" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -69,7 +82,7 @@
       <updated>1690273322677</updated>
       <workItem from="1690273323722" duration="1516000" />
       <workItem from="1690274853160" duration="11323000" />
-      <workItem from="1690292424277" duration="6454000" />
+      <workItem from="1690292424277" duration="10288000" />
     </task>
     <servers />
   </component>

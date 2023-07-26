@@ -21,14 +21,13 @@ export const SubMenuIcon = styled.div<IIsOpen>`
 `;
 
 export const SubMenu = styled.div`
-  display: flex;
+  display: ${(props: IIsOpen) => (props.isOpen ? "none" : "flex")};
   height: 30px;
   align-items: center;
   gap: 7px;
   padding-left: 35px;
   span {
     cursor: pointer;
-    display: ${(props: IIsOpen) => (props.isOpen ? "none" : "block")};
     color: #7a797d;
   }
 `;

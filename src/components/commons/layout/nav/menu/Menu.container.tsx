@@ -11,10 +11,10 @@ export default function MenuUI(props: IPropsMenuUI) {
 
   const onClickMoveToMenu = (event: CustomMouseEvent) => {
     setIsMenuOpen((prov: boolean) => !prov);
-    void router.push(`/${event.currentTarget.id}`);
+    void router.push(`${event.currentTarget.id}`);
   };
   const onClickMoveToSubMenu = (event: CustomMouseEvent) => {
-    void router.push(`/${event.currentTarget.id}`);
+    void router.push(`${event.currentTarget.id}`);
   };
 
   useEffect(() => {
@@ -44,8 +44,8 @@ export default function MenuUI(props: IPropsMenuUI) {
         )}
       </S.MenuName>
       {isMenuOpen && props.el.subMenu.length !== 0
-        ? props.el.subMenu.map((item: ISubMenuType) => (
-            <S.SubMenu isOpen={props.isOpen}>
+        ? props.el.subMenu.map((item: ISubMenuType, index: number) => (
+            <S.SubMenu key={index} isOpen={props.isOpen}>
               <span id={item.route} onClick={onClickMoveToSubMenu}>
                 {item.name}
               </span>

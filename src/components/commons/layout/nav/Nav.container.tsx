@@ -5,6 +5,8 @@ import { IoMdChatbubbles } from "react-icons/io";
 import { RiArtboard2Fill } from "react-icons/ri";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
+import { isNavOpenState } from "../../../../commons/store/store";
 
 export default function Nav() {
   const DASHBOARD_MENU = [
@@ -66,7 +68,7 @@ export default function Nav() {
   ];
 
   const router = useRouter();
-  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useRecoilState(isNavOpenState);
   const [dashboardMenu, setDashboardMenu] = useState(DASHBOARD_MENU);
 
   const onClickNavOpen = () => {
@@ -77,6 +79,7 @@ export default function Nav() {
   };
 
   useEffect(() => {
+    console.log(router.route);
     const updatedMenu = dashboardMenu.map((menu) => {
       if (menu.route === router.route) {
         return { ...menu, isOpen: true };
