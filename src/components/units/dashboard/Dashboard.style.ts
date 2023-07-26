@@ -39,7 +39,7 @@ export const FlexContents = styled.article`
 export const Contents = styled.article`
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 15px;
 `;
 
 // Chart
@@ -47,13 +47,13 @@ export const ChartContainer = styled.div`
   display: flex;
   height: auto;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   width: 50%;
 `;
 
 export const Chart = styled.div`
-  width: 100%;
-  height: 100%;
+  display: flex;
+  justify-content: center;
   background: #ffffff;
   border-radius: 12px;
   padding: 30px;

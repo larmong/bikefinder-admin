@@ -7,15 +7,25 @@ import { useEffect, useState } from "react";
 import { BsFillPlusSquareFill } from "react-icons/bs";
 import { collection, getDocs, limit, orderBy, query } from "firebase/firestore";
 import { db } from "../../../commons/libraries/firebase/firebase.config";
-import { CustomMouseEvent } from "../../../commons/types/global.types";
+import { IFetchFaq } from "./Dashboard.types";
 
 export default function Dashboard() {
   const router = useRouter();
+  const [fetchBoard, setFetchBoard] = useState<IFetchFaq[]>([]);
 
-  const [fetchBoard, setFetchBoard] = useState([]);
+  // 전체회원
+  const onClickMoveToUser = () => {
+    void router.push(`/user`);
+  };
 
-  const onClickBoardDetail = (event: CustomMouseEvent) => {
-    void router.push(`/faq/${event.currentTarget.id}`);
+  // 정기권결제
+  const onClickMoveToPayment = () => {
+    void router.push(`/payment`);
+  };
+
+  // 문의내역
+  const onClickMoveToFaq = () => {
+    void router.push(`/inquiry/contact`);
   };
 
   useEffect(() => {
@@ -27,12 +37,11 @@ export default function Dashboard() {
           orderBy("date", "desc"),
           limit(10)
         );
-
         const data = await getDocs(boardQuery);
         const result = data.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
-        }));
+        })) as IFetchFaq[];
 
         setFetchBoard(result);
       } catch (error) {}
@@ -44,10 +53,11 @@ export default function Dashboard() {
     <S.Wrapper>
       <S.PageSection>
         <S.FlexContents>
+          {/* 차트1 */}
           <S.ChartContainer>
             <S.Title>
               <span>전체회원</span>
-              <S.TitleIcon>
+              <S.TitleIcon onClick={onClickMoveToUser}>
                 <BsFillPlusSquareFill />
               </S.TitleIcon>
             </S.Title>
@@ -55,10 +65,11 @@ export default function Dashboard() {
               <UserChart />
             </S.Chart>
           </S.ChartContainer>
+          {/* 차트2 */}
           <S.ChartContainer>
             <S.Title>
               <span>정기권결제</span>
-              <S.TitleIcon>
+              <S.TitleIcon onClick={onClickMoveToPayment}>
                 <BsFillPlusSquareFill />
               </S.TitleIcon>
             </S.Title>
@@ -67,19 +78,16 @@ export default function Dashboard() {
             </S.Chart>
           </S.ChartContainer>
         </S.FlexContents>
-        {/* 콘텐츠2 */}
+        {/* 문의게시판 */}
         <S.Contents>
           <S.Title>
             <span>문의내역</span>
-            <S.TitleIcon>
+            <S.TitleIcon onClick={onClickMoveToFaq}>
               <BsFillPlusSquareFill />
             </S.TitleIcon>
           </S.Title>
           <S.Content>
-            <DashboardFaq
-              boardData={fetchBoard}
-              onClickBoardDetail={onClickBoardDetail}
-            />
+            <DashboardFaq boardData={fetchBoard} />
           </S.Content>
         </S.Contents>
       </S.PageSection>

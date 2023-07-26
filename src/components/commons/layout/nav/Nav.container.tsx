@@ -9,67 +9,71 @@ import { useRecoilState } from "recoil";
 import { isNavOpenState } from "../../../../commons/store/store";
 
 export default function Nav() {
-  const DASHBOARD_MENU = [
+  const router = useRouter();
+  const [isNavOpen, setIsNavOpen] = useRecoilState(isNavOpenState);
+  const [DASHBOARD_MENU, SET_DASHBOARD_MENU] = useState([
     {
+      isOpen: true,
       icon: <MdSpaceDashboard />,
       name: "대시보드",
       route: "/",
       subMenu: [],
-      isOpen: true,
     },
     {
+      isOpen: false,
       icon: <HiUserGroup />,
       name: "회원관리",
-      route: "/user",
+      route: "/user/member",
       subMenu: [
         {
+          isSubOpen: false,
           name: "일반회원",
-          route: "/member",
+          route: "/user/member",
         },
         {
+          isSubOpen: false,
           name: "관리자",
-          route: "/admin",
+          route: "/user/admin",
         },
       ],
-      isOpen: false,
     },
     {
+      isOpen: false,
       icon: <IoMdChatbubbles />,
       name: "문의관리",
-      route: "/faq",
+      route: "/inquiry/faq",
       subMenu: [
         {
+          isSubOpen: false,
           name: "자주묻는질문",
-          route: "/a",
+          route: "/inquiry/faq",
         },
         {
+          isSubOpen: false,
           name: "일대일문의",
-          route: "/b",
+          route: "/inquiry/contact",
         },
       ],
-      isOpen: false,
     },
     {
+      isOpen: false,
       icon: <RiArtboard2Fill />,
       name: "시민센터",
-      route: "",
+      route: "/citizen/notice",
       subMenu: [
         {
+          isSubOpen: false,
           name: "공지사항",
-          route: "",
+          route: "/citizen/notice",
         },
         {
+          isSubOpen: false,
           name: "협력업체",
-          route: "",
+          route: "/citizen/helped",
         },
       ],
-      isOpen: false,
     },
-  ];
-
-  const router = useRouter();
-  const [isNavOpen, setIsNavOpen] = useRecoilState(isNavOpenState);
-  const [dashboardMenu, setDashboardMenu] = useState(DASHBOARD_MENU);
+  ]);
 
   const onClickNavOpen = () => {
     setIsNavOpen((prov: boolean) => !prov);
@@ -79,15 +83,30 @@ export default function Nav() {
   };
 
   useEffect(() => {
-    console.log(router.route);
-    const updatedMenu = dashboardMenu.map((menu) => {
-      if (menu.route === router.route) {
+    const updatedMenu = DASHBOARD_MENU.map((menu) => {
+      const route = router.route.split("/")[1];
+      const pathname = menu.route.split("/")[1];
+      if (route === pathname) {
         return { ...menu, isOpen: true };
       } else {
         return { ...menu, isOpen: false };
       }
+    }).map((menu) => {
+      if (menu.subMenu && Array.isArray(menu.subMenu)) {
+        const updatedSubMenu = menu.subMenu.map((subMenuItem) => {
+          if (subMenuItem.route === router.route) {
+            return { ...subMenuItem, isSubOpen: true };
+          } else {
+            return { ...subMenuItem, isSubOpen: false };
+          }
+        });
+        return { ...menu, subMenu: updatedSubMenu };
+      } else {
+        return menu;
+      }
     });
-    setDashboardMenu(updatedMenu);
+
+    SET_DASHBOARD_MENU(updatedMenu);
   }, [router.route]);
 
   return (

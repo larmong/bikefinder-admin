@@ -5,7 +5,8 @@ export const Menu = styled.div`
   display: flex;
   flex-direction: column;
   align-items: ${(props: IIsOpen) => (props.isOpen ? "center" : "initial")};
-  gap: 10px;
+  justify-content: center;
+  width: 100%;
 `;
 
 export const SubMenuIcon = styled.div<IIsOpen>`
@@ -20,23 +21,35 @@ export const SubMenuIcon = styled.div<IIsOpen>`
   }
 `;
 
-export const SubMenu = styled.div`
-  display: ${(props: IIsOpen) => (props.isOpen ? "none" : "flex")};
-  height: 30px;
+export const SubMenuContainer = styled.div<IIsOpen>`
+  display: ${(props) => (props.isOpen ? "none" : "flex")};
+  flex-direction: column;
+  justify-content: center;
+`;
+
+export const SubMenu = styled.div<IIsOpen>`
+  position: relative;
+  display: flex;
   align-items: center;
-  gap: 7px;
-  padding-left: 35px;
+  height: 45px;
   span {
+    position: absolute;
+    width: calc(100% + 60px);
+    margin-left: -30px;
+    padding: 12px 0 12px 65px;
+    color: ${(props) => (props.isSubOpen ? "#0d8f68" : "#7a797d")};
+    background: ${(props) => (props.isSubOpen ? "rgb(232,255,246)" : "#fff")};
     cursor: pointer;
-    color: #7a797d;
+    //color: #7a797d;
   }
 `;
 
 export const MenuName = styled.div<IIsOpen>`
+  height: 100%;
   display: flex;
-  height: 30px;
   align-items: center;
   gap: 7px;
+  padding: 10px 0;
   span {
     cursor: pointer;
     display: ${(props) => (props.isOpen ? "none" : "block")};

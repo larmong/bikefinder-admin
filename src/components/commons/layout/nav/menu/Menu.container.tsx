@@ -43,15 +43,21 @@ export default function MenuUI(props: IPropsMenuUI) {
           ""
         )}
       </S.MenuName>
-      {isMenuOpen && props.el.subMenu.length !== 0
-        ? props.el.subMenu.map((item: ISubMenuType, index: number) => (
-            <S.SubMenu key={index} isOpen={props.isOpen}>
-              <span id={item.route} onClick={onClickMoveToSubMenu}>
-                {item.name}
-              </span>
-            </S.SubMenu>
-          ))
-        : ""}
+      <S.SubMenuContainer isOpen={props.isOpen}>
+        {isMenuOpen && props.el.subMenu.length !== 0
+          ? props.el.subMenu.map((item: ISubMenuType, index: number) => (
+              <S.SubMenu
+                key={index}
+                isOpen={props.isOpen}
+                isSubOpen={item.isSubOpen}
+              >
+                <span id={item.route} onClick={onClickMoveToSubMenu}>
+                  {item.name}
+                </span>
+              </S.SubMenu>
+            ))
+          : ""}
+      </S.SubMenuContainer>
     </S.Menu>
   );
 }

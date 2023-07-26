@@ -54,13 +54,11 @@ export const Close = styled.div`
 `;
 
 export const NavMenu = styled.div<IIsOpen>`
-  height: 90%;
-  padding: 30px 0;
-  display: flex;
-  flex-direction: column;
-  border-bottom: 1px solid #eee;
+  width: 100%;
+  height: 100%;
+  padding-top: 30px;
   border-top: 1px solid #eee;
-  gap: ${(props) => (props.isOpen ? "30px" : "20px")};
+  border-bottom: 1px solid #eee;
 `;
 
 export const NavBottom = styled.div`

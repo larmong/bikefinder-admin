@@ -15,6 +15,7 @@ export interface IIsOpen {
   isOpen?: boolean;
   isMenuOpen?: boolean;
   isMenuOn?: boolean;
+  isSubOpen?: boolean;
 }
 
 export interface IDashboardMenuType {
@@ -27,4 +28,5 @@ export interface IDashboardMenuType {
 export interface ISubMenuType {
   name: string;
   route: string;
+  isSubOpen: boolean;
 }
