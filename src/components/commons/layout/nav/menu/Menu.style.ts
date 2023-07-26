@@ -41,7 +41,7 @@ export const MenuName = styled.div<IIsOpen>`
     cursor: pointer;
     display: ${(props) => (props.isOpen ? "none" : "block")};
     color: ${(props) => (props.isMenuOn ? "#0d8f68" : "#7a797d")};
-    font-weight: ${(props) => (props.isMenuOn ? "700" : "400")};
+    font-weight: ${(props) => (props.isMenuOn ? "900" : "400")};
   }
 `;
 export const MenuIcon = styled.div`

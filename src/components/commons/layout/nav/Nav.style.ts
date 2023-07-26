@@ -75,6 +75,7 @@ export const NavBottom = styled.div`
   }
 `;
 export const Copy = styled.p`
+  text-align: center;
   font-size: 10px;
   color: #7a797d;
   display: ${(props: IIsOpen) => (props.isOpen ? "none" : "block")};
