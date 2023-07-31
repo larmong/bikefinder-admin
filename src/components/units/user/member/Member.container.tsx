@@ -5,6 +5,7 @@ import { collection, getDocs, limit, orderBy, query } from "firebase/firestore";
 import { db } from "../../../../commons/libraries/firebase/firebase.config";
 import { IFetchFaq } from "../../dashboard/Dashboard.types";
 import { useRouter } from "next/router";
+import { IFetchMember } from "./Member.types";
 
 export default function Member() {
   const router = useRouter();
@@ -19,7 +20,7 @@ export default function Member() {
         const result = data.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
-        }));
+        })) as IFetchMember[];
 
         setFetchBoard(result);
       } catch (error) {}
