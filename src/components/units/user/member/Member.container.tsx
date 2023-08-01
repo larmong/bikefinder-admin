@@ -1,9 +1,9 @@
 import * as S from "../../dashboard/Dashboard.style";
-import MemberBoard from "./board/Board.container";
+import MemberBoard from "../board/Board.container";
 import { useEffect, useState } from "react";
 import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "../../../../commons/libraries/firebase/firebase.config";
-import { IFetchMember } from "./board/Board.types";
+import { IFetchMember } from "../board/Board.types";
 import { CustomMouseEvent } from "../../../../commons/types/global.types";
 
 export default function Member() {

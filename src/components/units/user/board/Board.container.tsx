@@ -1,14 +1,14 @@
-import * as S from "../../../../commons/boards/Board.style";
+import * as S from "../../../commons/boards/Board.style";
 import { useEffect, useState } from "react";
-import Radio02 from "../../../../commons/inputs/radio/radio02/Radio02.container";
-import Pagination01 from "../../../../commons/paginations/pagination01/Pagination01.container";
+import Radio02 from "../../../commons/inputs/radio/radio02/Radio02.container";
+import Pagination01 from "../../../commons/paginations/pagination01/Pagination01.container";
 import {
   IBoardDetail,
   IBoardDetailTitleType,
-} from "../../../../commons/boards/Board.types";
+} from "../../../commons/boards/Board.types";
 import { IFetchMember, IPropsMemberBoard } from "./Board.types";
-import Button02 from "../../../../commons/buttons/button02/Button02.container";
-import { getPhone } from "../../../../commons/utils/utils";
+import Button02 from "../../../commons/buttons/button02/Button02.container";
+import { getPhone } from "../../../commons/utils/utils";
 
 export default function MemberBoard(props: IPropsMemberBoard) {
   const BOARD_DETAIL: IBoardDetail = {

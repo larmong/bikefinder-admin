@@ -1,12 +1,12 @@
 import * as S from "../../dashboard/Dashboard.style";
-import MemberBoard from "./board/Board.container";
 import { useEffect, useState } from "react";
 import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "../../../../commons/libraries/firebase/firebase.config";
-import { IFetchMember } from "./board/Board.types";
 import { CustomMouseEvent } from "../../../../commons/types/global.types";
+import MemberBoard from "../board/Board.container";
+import { IFetchMember } from "../board/Board.types";
 
-export default function Member() {
+export default function Admin() {
   const USER_STATE_TYPE = [
     {
       id: 0,
@@ -38,7 +38,7 @@ export default function Member() {
       try {
         const data = await query(
           collection(db, "user"),
-          where("level", "==", 0),
+          where("level", "==", 10),
           orderBy("date", "desc")
         );
         const getData = await getDocs(data);
@@ -68,7 +68,7 @@ export default function Member() {
     <S.Wrapper>
       <S.Contents>
         <S.Title>
-          <span>일반회원</span>
+          <span>관리자</span>
         </S.Title>
         <S.Content>
           <MemberBoard

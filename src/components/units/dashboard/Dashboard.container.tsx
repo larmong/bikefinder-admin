@@ -7,11 +7,11 @@ import { useEffect, useState } from "react";
 import { BsFillPlusSquareFill } from "react-icons/bs";
 import { collection, getDocs, limit, orderBy, query } from "firebase/firestore";
 import { db } from "../../../commons/libraries/firebase/firebase.config";
-import { IFetchFaq } from "./Dashboard.types";
+import { IFetchDashboard } from "./board/Board.types";
 
 export default function Dashboard() {
   const router = useRouter();
-  const [fetchBoard, setFetchBoard] = useState<IFetchFaq[]>([]);
+  const [fetchBoard, setFetchBoard] = useState<IFetchDashboard[]>([]);
 
   // 전체회원
   const onClickMoveToUser = () => {
@@ -41,7 +41,7 @@ export default function Dashboard() {
         const result = data.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
-        })) as IFetchFaq[];
+        })) as IFetchDashboard[];
 
         setFetchBoard(result);
       } catch (error) {}

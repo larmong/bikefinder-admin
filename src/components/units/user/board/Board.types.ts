@@ -1,5 +1,5 @@
-import { CustomMouseEvent } from "../../../../../commons/types/global.types";
-import { IRadioData } from "../../../../commons/inputs/radio/radio02/Radio02.types";
+import { CustomMouseEvent } from "../../../../commons/types/global.types";
+import { IRadioData } from "../../../commons/inputs/radio/radio02/Radio02.types";
 
 export interface IFetchMember {
   id?: string;
