@@ -1,12 +1,13 @@
 import * as S from "../../dashboard/Dashboard.style";
 import MemberBoard from "./board/Board.container";
 import { useEffect, useState } from "react";
-import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "../../../../commons/libraries/firebase/firebase.config";
 import { IFetchMember } from "./board/Board.types";
+import { CustomMouseEvent } from "../../../../commons/types/global.types";
 
 export default function Member() {
-  const PAYMENT_DATE_TYPE = [
+  const USER_STATE_TYPE = [
     {
       id: 0,
       name: "전체",
@@ -14,44 +15,54 @@ export default function Member() {
     },
     {
       id: 1,
-      name: "1주일",
+      name: "정상",
       checkedState: false,
     },
     {
       id: 2,
-      name: "1개월",
-      checkedState: false,
-    },
-    {
-      id: 3,
-      name: "3개월",
-      checkedState: false,
-    },
-    {
-      id: 4,
-      name: "6개월",
+      name: "정지",
       checkedState: false,
     },
   ];
 
   const [fetchBoard, setFetchBoard] = useState<IFetchMember[]>([]);
+  const [filteredBoard, setFilteredBoard] = useState<IFetchMember[]>([]);
+  const [userStateType, setUserStateType] = useState<number>(0);
+
+  const onClickUserDetail = (event: CustomMouseEvent) => {
+    console.log(event.currentTarget.id);
+  };
 
   useEffect(() => {
     const getBoardData = async () => {
       try {
-        const boardCollection = collection(db, "user");
-        let boardQuery = query(boardCollection, orderBy("date", "desc"));
-        const data = await getDocs(boardQuery);
-        const result = data.docs.map((doc) => ({
-          id: doc.id,
+        const data = await query(
+          collection(db, "user"),
+          where("level", "==", 0),
+          orderBy("date", "desc")
+        );
+        const getData = await getDocs(data);
+        const result: any = getData.docs.map((doc) => ({
           ...doc.data(),
-        })) as IFetchMember[];
-
+          id: doc.id,
+        }));
         setFetchBoard(result);
-      } catch (error) {}
+      } catch (error) {
+        console.log(error);
+      }
     };
     void getBoardData();
   }, []);
+
+  useEffect(() => {
+    let filteredData = fetchBoard;
+    if (userStateType === 1) {
+      filteredData = filteredData.filter((item: IFetchMember) => item.state);
+    } else if (userStateType === 2) {
+      filteredData = filteredData.filter((item: IFetchMember) => !item.state);
+    }
+    setFilteredBoard(filteredData);
+  }, [fetchBoard, userStateType]);
 
   return (
     <S.Wrapper>
@@ -60,7 +71,12 @@ export default function Member() {
           <span>일반회원</span>
         </S.Title>
         <S.Content>
-          <MemberBoard boardData={fetchBoard} />
+          <MemberBoard
+            boardData={filteredBoard}
+            USER_STATE_TYPE={USER_STATE_TYPE}
+            setUserStateType={setUserStateType}
+            onClickUserDetail={onClickUserDetail}
+          />
         </S.Content>
       </S.Contents>
     </S.Wrapper>

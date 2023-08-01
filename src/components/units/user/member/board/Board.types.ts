@@ -1,10 +1,15 @@
+import { CustomMouseEvent } from "../../../../../commons/types/global.types";
+import { IRadioData } from "../../../../commons/inputs/radio/radio02/Radio02.types";
+
 export interface IFetchMember {
-  id: string;
+  id?: string;
   email: string;
   name: string;
   phone: string;
   birth: string;
   date: string;
+  state: boolean;
+  level: number;
   rentalPassword: string;
   address: IAddressType;
   cardInfo: ICardInfoType;
@@ -27,6 +32,9 @@ export interface IUseType {
   minute: string;
 }
 
-export interface IWidthValue {
-  widthValue: string;
+export interface IPropsMemberBoard {
+  boardData: IFetchMember[];
+  USER_STATE_TYPE: IRadioData[];
+  setUserStateType: (radioNum: number) => void;
+  onClickUserDetail: (event: CustomMouseEvent) => void;
 }

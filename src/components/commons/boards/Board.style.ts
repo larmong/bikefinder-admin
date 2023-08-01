@@ -54,6 +54,14 @@ export const BoardItem = styled.span`
     }
   }
 `;
+export const BoardItemState = styled.span`
+  &.red {
+    color: #dc1919;
+  }
+  &.blue {
+    color: #1938dc;
+  }
+`;
 
 // SearchWrapper
 export const SearchWrapper = styled.div`

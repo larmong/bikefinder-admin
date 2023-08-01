@@ -1,18 +1,19 @@
 import * as S from "../../../../commons/boards/Board.style";
 import { useEffect, useState } from "react";
-// import { getPrice } from "../../../../../commons/utils/utils";
 import Radio02 from "../../../../commons/inputs/radio/radio02/Radio02.container";
 import Pagination01 from "../../../../commons/paginations/pagination01/Pagination01.container";
 import {
   IBoardDetail,
   IBoardDetailTitleType,
 } from "../../../../commons/boards/Board.types";
-import { IFetchMember } from "./Board.types";
+import { IFetchMember, IPropsMemberBoard } from "./Board.types";
+import Button02 from "../../../../commons/buttons/button02/Button02.container";
+import { getPhone } from "../../../../commons/utils/utils";
 
-export default function MemberBoard(props) {
+export default function MemberBoard(props: IPropsMemberBoard) {
   const BOARD_DETAIL: IBoardDetail = {
-    title: ["신청일자", "환불금액", "결제상품", "상태", "비고"],
-    columns: "1fr 1fr 1fr 1fr 2fr",
+    title: ["아이디", "이름", "핸드폰", "회원상태", "상세보기"],
+    columns: "1.5fr 1fr 1fr 1fr 1fr",
   };
 
   const [filteredData, setFilteredData] = useState<IFetchMember[]>([]);
@@ -26,8 +27,8 @@ export default function MemberBoard(props) {
     endIndex
   );
 
-  const onClickPaymentDateType = (radioNum: number) => {
-    props.setPaymentDateType(Number(radioNum));
+  const onClickUserStateType = (radioNum: number) => {
+    props.setUserStateType(Number(radioNum));
   };
 
   const handlePageChange = (selectedPage: number) => {
@@ -44,18 +45,18 @@ export default function MemberBoard(props) {
       <S.BoardWrapper>
         <S.SearchWrapper>
           <S.Search>
-            <S.SearchHead>신청일자</S.SearchHead>
+            <S.SearchHead>회원상태</S.SearchHead>
             <S.SearchBody>
               <Radio02
-                onClickRadio={onClickPaymentDateType}
-                radioData={props.PAYMENT_DATE_TYPE}
-                radioName="paymentMethodType"
+                onClickRadio={onClickUserStateType}
+                radioData={props.USER_STATE_TYPE}
+                radioName="userStateType"
               />
             </S.SearchBody>
           </S.Search>
         </S.SearchWrapper>
         <S.BoardContainer>
-          <S.Board widthValue="700px">
+          <S.Board>
             <S.BoardHead isColumns={BOARD_DETAIL.columns}>
               {BOARD_DETAIL.title.map(
                 (el: IBoardDetailTitleType, index: number) => (
@@ -64,20 +65,29 @@ export default function MemberBoard(props) {
               )}
             </S.BoardHead>
             <S.BoardBody>
-              {paginatedData.length === 0 ? (
-                <S.BoardBody>
-                  <S.BoardItemWrapper>환불내역이 없습니다.</S.BoardItemWrapper>
-                </S.BoardBody>
-              ) : (
-                paginatedData?.map((el: IFetchMember) => (
-                  <S.BoardItemWrapper
-                    key={el.id}
-                    isColumns={BOARD_DETAIL.columns}
-                  >
-                    <S.BoardItem>{el.date}</S.BoardItem>
-                  </S.BoardItemWrapper>
-                ))
-              )}
+              {paginatedData?.map((el: IFetchMember) => (
+                <S.BoardItemWrapper
+                  key={el.id}
+                  isColumns={BOARD_DETAIL.columns}
+                >
+                  <S.BoardItem>{el.email}</S.BoardItem>
+                  <S.BoardItem>{el.name}</S.BoardItem>
+                  <S.BoardItem>{getPhone(String(el.phone))}</S.BoardItem>
+                  <S.BoardItem>
+                    <S.BoardItemState className={el.state ? "" : "red"}>
+                      {el.state ? "정상" : "정지"}
+                    </S.BoardItemState>
+                  </S.BoardItem>
+                  <S.BoardItem>
+                    <Button02
+                      btnId={el.id}
+                      onClickButton={props.onClickUserDetail}
+                      btnWidth="80%"
+                      btnText="상세보기"
+                    />
+                  </S.BoardItem>
+                </S.BoardItemWrapper>
+              ))}
             </S.BoardBody>
           </S.Board>
         </S.BoardContainer>

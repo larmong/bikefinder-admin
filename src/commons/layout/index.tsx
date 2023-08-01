@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   display: flex;
 `;
 const Contents = styled.div`
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 20px;
