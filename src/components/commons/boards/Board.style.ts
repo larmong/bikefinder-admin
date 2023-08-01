@@ -1,7 +1,10 @@
 import styled from "@emotion/styled";
-import { IIsColumns } from "../Dashboard.types";
+import { IIsColumns } from "./Board.types";
 
 export const Wrapper = styled.div``;
+export const BoardWrapper = styled.div`
+  width: 100%;
+`;
 export const BoardContainer = styled.div`
   width: 100%;
 `;

@@ -1,10 +1,8 @@
-import * as S from "./Board.style";
+import * as S from "../../../commons/boards/Board.style";
 import { getDate } from "../../../../components/commons/utils/utils";
-import {
-  IBoardDetail,
-  IFetchFaq,
-  IPropsDashboardFaq,
-} from "../Dashboard.types";
+import { IPropsDashboardFaq } from "../Dashboard.types";
+import { IFetchDashboard } from "./Board.types";
+import { IBoardDetail } from "../../../commons/boards/Board.types";
 
 export default function DashboardFaq(props: IPropsDashboardFaq) {
   const BOARD_DETAIL: IBoardDetail = {
@@ -20,7 +18,7 @@ export default function DashboardFaq(props: IPropsDashboardFaq) {
         ))}
       </S.BoardHead>
       <S.BoardBody>
-        {props.boardData?.map((el: IFetchFaq) => (
+        {props.boardData?.map((el: IFetchDashboard) => (
           <S.BoardItemWrapper key={el.id} isColumns={BOARD_DETAIL.columns}>
             <S.DashBoardItem className="board-item-left">
               {el.title}
