@@ -11,6 +11,7 @@ interface ILayoutProps {
 
 const Wrapper = styled.div`
   display: flex;
+  min-height: 100vh;
 `;
 const Contents = styled.div`
   overflow: hidden;

@@ -23,6 +23,7 @@ export const BoardHead = styled.div`
   border-top: 1px solid #999999;
   border-bottom: 1px solid #999999;
 `;
+
 export const BoardBody = styled.div``;
 export const BoardItemWrapper = styled.div`
   height: auto;
