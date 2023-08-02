@@ -5,19 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c314f12d-c53e-4d70-b5d9-c01d63c718a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/inquiry/contact/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/inquiry/faq/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/inquiry/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/units/inquiry/Inquiry.container.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/units/inquiry/contact/Contact.container.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/units/inquiry/faq/Faq.container.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/units/inquiry/faq/Faq.style.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/units/inquiry/faq/Faq.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/units/inquiry/faq/board/Board.container.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/units/inquiry/faq/board/Board.types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/units/inquiry/contact/Contact.style.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/units/inquiry/contact/Contact.types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/units/inquiry/contact/board/Board.container.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/units/inquiry/contact/board/Board.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commons/layout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/commons/layout/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/commons/boards/Board.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/commons/boards/Board.style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/units/inquiry/contact/Contact.container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/units/inquiry/contact/Contact.container.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/units/inquiry/faq/Faq.container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/units/inquiry/faq/Faq.container.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/units/inquiry/faq/board/Board.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/units/inquiry/faq/board/Board.types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +37,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/larmong/Desktop/portfolio/bike-finder-admin/src/components/units/inquiry/faq/board",
+    "last_opened_file_path": "/Users/larmong/Desktop/portfolio/bike-finder-admin/src/components/units/inquiry/contact/board",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -55,11 +51,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/units/inquiry/contact/board" />
+      <recent name="$PROJECT_DIR$/src/components/units/inquiry/contact" />
       <recent name="$PROJECT_DIR$/src/components/units/inquiry/faq/board" />
       <recent name="$PROJECT_DIR$/src/components/commons" />
-      <recent name="$PROJECT_DIR$/src/components/units/inquiry/contact" />
       <recent name="$PROJECT_DIR$/src/components/units/inquiry/faq" />
-      <recent name="$PROJECT_DIR$/pages/inquiry" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/units/inquiry" />
@@ -77,7 +73,7 @@
       <updated>1690273322677</updated>
       <workItem from="1690273323722" duration="1516000" />
       <workItem from="1690274853160" duration="11323000" />
-      <workItem from="1690292424277" duration="51885000" />
+      <workItem from="1690292424277" duration="53442000" />
     </task>
     <servers />
   </component>

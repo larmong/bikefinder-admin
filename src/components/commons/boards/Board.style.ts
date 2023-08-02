@@ -62,6 +62,9 @@ export const BoardItemState = styled.span`
   &.blue {
     color: #1938dc;
   }
+  &.on {
+    color: #0d8f68;
+  }
 `;
 
 // SearchWrapper

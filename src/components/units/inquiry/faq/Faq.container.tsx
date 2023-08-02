@@ -74,7 +74,7 @@ export default function Faq() {
     <S.Wrapper>
       <Contents>
         <Title>
-          <span>일반회원</span>
+          <span>자주묻는질문</span>
         </Title>
         <Content>
           <S.Tab>
