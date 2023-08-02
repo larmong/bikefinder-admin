@@ -16,14 +16,9 @@ import Button01 from "../../../../commons/buttons/button01/Button01.container";
 export default function MemberBoardDetail(props: IPropsMemberBoardDetail) {
   const boardId = props.boardId;
   const [fetchBoard, setFetchBoard] = useState<IFetchMember>();
-  const [userStateType, setUserStateType] = useState<number>(0);
 
   const onClickUserSave = async () => {
     // user 상태, 등급 변경하고 저장
-  };
-
-  const onClickUserStateType = (radioNum: number) => {
-    setUserStateType(Number(radioNum));
   };
 
   useEffect(() => {

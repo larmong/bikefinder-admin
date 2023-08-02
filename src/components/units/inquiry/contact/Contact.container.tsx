@@ -29,9 +29,27 @@ export default function Contact() {
   const [fetchBoard, setFetchBoard] = useState<IFetchContact[]>([]);
   const [filteredBoard, setFilteredBoard] = useState<IFetchContact[]>([]);
   const [faqStateType, setFaqStateType] = useState<number>(0);
+  const [boardId, setBoardId] = useState("");
+  const [isModal, setIsModal] = useState(false);
+  const [contactData, setContactData] = useState("");
+
+  const modalToggle = () => {
+    setIsModal((prev: boolean) => !prev);
+  };
+
+  const modalCurrentTarget = (event: CustomMouseEvent) => {
+    if (isModal && event.target === event.currentTarget) {
+      modalToggle();
+    }
+  };
 
   const onClickContactDetail = (event: CustomMouseEvent) => {
-    console.log(event.currentTarget.id);
+    setBoardId(event.currentTarget.id);
+    modalToggle();
+  };
+
+  const onChangeContent = (value: string) => {
+    setContactData(value);
   };
 
   useEffect(() => {
@@ -77,6 +95,11 @@ export default function Contact() {
             fetchData={filteredBoard}
             setFaqStateType={setFaqStateType}
             onClickFaqDetail={onClickContactDetail}
+            boardId={boardId}
+            isModal={isModal}
+            modalCurrentTarget={modalCurrentTarget}
+            modalToggle={modalToggle}
+            onChangeContent={onChangeContent}
           />
         </Content>
       </Contents>

@@ -16,4 +16,9 @@ export interface IPropsContactBoard {
   FAQ_STATE_TYPE: IRadioData[];
   setFaqStateType: (radioNum: number) => void;
   onClickFaqDetail: (event: CustomMouseEvent) => void;
+  boardId: string;
+  isModal: boolean;
+  modalCurrentTarget: (event: CustomMouseEvent) => void;
+  modalToggle: (event: CustomMouseEvent) => void;
+  onChangeContent: (value: string) => void;
 }

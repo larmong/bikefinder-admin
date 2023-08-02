@@ -1,9 +1,11 @@
 import * as S from "../../../../commons/boards/Board.style";
 import { getDate } from "../../../../commons/utils/utils";
 import { useEffect, useState } from "react";
+import Modal01 from "../../../../commons/modals/modal01/Modal01.container";
 import Radio02 from "../../../../commons/inputs/radio/radio02/Radio02.container";
 import Button02 from "../../../../commons/buttons/button02/Button02.container";
 import Pagination01 from "../../../../commons/paginations/pagination01/Pagination01.container";
+import ContactBoardDetail from "./detail/BoardDetail.container";
 import { IFetchContact, IPropsContactBoard } from "./Board.types";
 import {
   IBoardDetail,
@@ -102,6 +104,18 @@ export default function ContactBoard(props: IPropsContactBoard) {
           />
         )}
       </S.BoardWrapper>
+      <Modal01
+        modalTitle="자주묻는질문 상세페이지"
+        isModal={props.isModal}
+        modalCurrentTarget={props.modalCurrentTarget}
+        modalToggle={props.modalToggle}
+        modalDetail={
+          <ContactBoardDetail
+            boardId={props.boardId}
+            onChangeContent={props.onChangeContent}
+          />
+        }
+      />
     </S.Wrapper>
   );
 }
