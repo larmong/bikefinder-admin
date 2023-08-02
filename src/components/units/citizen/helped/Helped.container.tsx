@@ -9,9 +9,22 @@ import HelpedBoard from "./board/Board.container";
 
 export default function Helped() {
   const [fetchData, setFetchData] = useState<IFetchHelped[]>([]);
+  const [boardId, setBoardId] = useState("");
+  const [isModal, setIsModal] = useState(false);
+
+  const modalToggle = () => {
+    setIsModal((prev: boolean) => !prev);
+  };
+
+  const modalCurrentTarget = (event: CustomMouseEvent) => {
+    if (isModal && event.target === event.currentTarget) {
+      modalToggle();
+    }
+  };
 
   const onClickHelpedDetail = (event: CustomMouseEvent) => {
-    console.log(event.currentTarget.id);
+    setBoardId(event.currentTarget.id);
+    modalToggle();
   };
 
   useEffect(() => {
@@ -44,6 +57,10 @@ export default function Helped() {
           <HelpedBoard
             fetchData={fetchData}
             onClickHelpedDetail={onClickHelpedDetail}
+            boardId={boardId}
+            isModal={isModal}
+            modalCurrentTarget={modalCurrentTarget}
+            modalToggle={modalToggle}
           />
         </Content>
       </Contents>

@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c314f12d-c53e-4d70-b5d9-c01d63c718a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/units/citizen/notice/board/detail/BoardDetail.container.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/units/citizen/helped/board/detail/BoardDetail.container.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/units/citizen/notice/Notice.container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/units/citizen/notice/Notice.container.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/units/citizen/notice/board/Board.container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/units/citizen/notice/board/Board.container.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/units/citizen/notice/board/Board.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/units/citizen/notice/board/Board.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/units/inquiry/contact/board/Board.container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/units/inquiry/contact/board/Board.container.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/units/citizen/helped/Helped.container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/units/citizen/helped/Helped.container.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/units/citizen/helped/board/Board.container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/units/citizen/helped/board/Board.container.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/units/citizen/helped/board/Board.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/units/citizen/helped/board/Board.types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +33,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/larmong/Desktop/portfolio/bike-finder-admin/src/components/units/citizen/notice/board",
+    "last_opened_file_path": "/Users/larmong/Desktop/portfolio/bike-finder-admin/src/components/units/citizen/helped/board",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -48,11 +47,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/units/citizen/helped/board" />
       <recent name="$PROJECT_DIR$/src/components/units/citizen/notice/board" />
       <recent name="$PROJECT_DIR$/src/components/units/inquiry/faq/board" />
       <recent name="$PROJECT_DIR$/src/components/commons/boards/detail" />
       <recent name="$PROJECT_DIR$/src/components/units/inquiry/contact/board" />
-      <recent name="$PROJECT_DIR$/src/components/units/user/board/detail" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/units/inquiry" />
@@ -70,7 +69,7 @@
       <updated>1690273322677</updated>
       <workItem from="1690273323722" duration="1516000" />
       <workItem from="1690274853160" duration="11323000" />
-      <workItem from="1690292424277" duration="66226000" />
+      <workItem from="1690292424277" duration="66608000" />
     </task>
     <servers />
   </component>

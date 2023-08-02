@@ -8,6 +8,8 @@ import {
   IBoardDetail,
   IBoardDetailTitleType,
 } from "../../../../commons/boards/Board.types";
+import Modal01 from "../../../../commons/modals/modal01/Modal01.container";
+import HelpedBoardDetail from "./detail/BoardDetail.container";
 
 export default function HelpedBoard(props: IPropsHelpedBoard) {
   const BOARD_DETAIL: IBoardDetail = {
@@ -75,6 +77,13 @@ export default function HelpedBoard(props: IPropsHelpedBoard) {
           />
         )}
       </S.BoardWrapper>
+      <Modal01
+        modalTitle="협력업체 상세페이지"
+        isModal={props.isModal}
+        modalCurrentTarget={props.modalCurrentTarget}
+        modalToggle={props.modalToggle}
+        modalDetail={<HelpedBoardDetail boardId={props.boardId} />}
+      />
     </S.Wrapper>
   );
 }

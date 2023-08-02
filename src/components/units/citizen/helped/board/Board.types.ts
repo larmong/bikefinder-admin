@@ -11,4 +11,8 @@ export interface IFetchHelped {
 export interface IPropsHelpedBoard {
   fetchData: IFetchHelped[];
   onClickHelpedDetail: (event: CustomMouseEvent) => void;
+  boardId: string;
+  isModal: boolean;
+  modalCurrentTarget: (event: CustomMouseEvent) => void;
+  modalToggle: (event: CustomMouseEvent) => void;
 }
