@@ -1,60 +1,37 @@
 import * as S from "../../../../commons/boards/Board.style";
 import { getDate } from "../../../../commons/utils/utils";
-import { useEffect, useState } from "react";
-import Radio02 from "../../../../commons/inputs/radio/radio02/Radio02.container";
+import { useState } from "react";
 import Button02 from "../../../../commons/buttons/button02/Button02.container";
 import Pagination01 from "../../../../commons/paginations/pagination01/Pagination01.container";
-import { IFetchContact, IPropsContactBoard } from "./Board.types";
+import { IFetchHelped, IPropsHelpedBoard } from "./Board.types";
 import {
   IBoardDetail,
   IBoardDetailTitleType,
 } from "../../../../commons/boards/Board.types";
 
-export default function ContactBoard(props: IPropsContactBoard) {
+export default function HelpedBoard(props: IPropsHelpedBoard) {
   const BOARD_DETAIL: IBoardDetail = {
-    title: ["날짜", "제목", "답변상태", "상세보기"],
-    columns: "1fr 3fr 1fr 1fr",
+    title: ["날짜", "회사", "제목", "상세보기"],
+    columns: "1fr 1fr 3fr 1fr",
   };
 
-  const [filteredData, setFilteredData] = useState<IFetchContact[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const pageSize: number = 10;
   const noticeLength: number = props.fetchData.length;
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex: number = startIndex + pageSize;
-  const paginatedData: IFetchContact[] = filteredData.slice(
+  const paginatedData: IFetchHelped[] = props.fetchData.slice(
     startIndex,
     endIndex
   );
-
-  const onClickUserStateType = (radioNum: number) => {
-    props.setFaqStateType(Number(radioNum));
-  };
 
   const handlePageChange = (selectedPage: number) => {
     void setCurrentPage(selectedPage);
   };
 
-  useEffect(() => {
-    setFilteredData(props.fetchData);
-    setCurrentPage(1);
-  }, [props.fetchData]);
-
   return (
     <S.Wrapper>
       <S.BoardWrapper>
-        <S.SearchWrapper>
-          <S.Search>
-            <S.SearchHead>답변상태</S.SearchHead>
-            <S.SearchBody>
-              <Radio02
-                onClickRadio={onClickUserStateType}
-                radioData={props.FAQ_STATE_TYPE}
-                radioName="userStateType"
-              />
-            </S.SearchBody>
-          </S.Search>
-        </S.SearchWrapper>
         <S.BoardContainer>
           <S.Board>
             <S.BoardHead isColumns={BOARD_DETAIL.columns}>
@@ -65,24 +42,20 @@ export default function ContactBoard(props: IPropsContactBoard) {
               )}
             </S.BoardHead>
             <S.BoardBody>
-              {paginatedData?.map((el: IFetchContact) => (
+              {paginatedData?.map((el: IFetchHelped) => (
                 <S.BoardItemWrapper
                   key={el.id}
                   isColumns={BOARD_DETAIL.columns}
                 >
                   <S.BoardItem>{getDate(el.date)}</S.BoardItem>
+                  <S.BoardItem>{getDate(el.company)}</S.BoardItem>
                   <S.BoardItem className="board-item-left">
                     {el.title}
                   </S.BoardItem>
                   <S.BoardItem>
-                    <S.BoardItemState className={el.state ? "on" : ""}>
-                      {el.state ? "답변완료" : "미답변"}
-                    </S.BoardItemState>
-                  </S.BoardItem>
-                  <S.BoardItem>
                     <Button02
                       btnId={el.id}
-                      onClickButton={props.onClickFaqDetail}
+                      onClickButton={props.onClickHelpedDetail}
                       btnWidth="80%"
                       btnText="상세보기"
                     />

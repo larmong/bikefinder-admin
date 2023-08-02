@@ -1,5 +1,5 @@
 import * as S from "../../../../commons/boards/Board.style";
-import { getDate, getPhone } from "../../../../commons/utils/utils";
+import { getDate } from "../../../../commons/utils/utils";
 import { IFetchNotice, IPropsNoticeBoard } from "./Board.types";
 import {
   IBoardDetail,
@@ -71,7 +71,9 @@ export default function NoticeBoard(props: IPropsNoticeBoard) {
                   isColumns={BOARD_DETAIL.columns}
                 >
                   <S.BoardItem>{getDate(el.date)}</S.BoardItem>
-                  <S.BoardItem>{el.title}</S.BoardItem>
+                  <S.BoardItem className="board-item-left">
+                    {el.title}
+                  </S.BoardItem>
                   <S.BoardItem>
                     <S.BoardItemState className={el.top ? "on" : ""}>
                       {el.top ? "상위공지" : "일반공지"}

@@ -5,21 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c314f12d-c53e-4d70-b5d9-c01d63c718a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/citizen/helped/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/citizen/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/citizen/notice/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/units/citizen/Citizen.container.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/units/citizen/helped/Helped.container.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/units/citizen/helped/Helped.style.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/units/citizen/helped/Helped.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/units/citizen/helped/board/Board.container.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/units/citizen/helped/board/Board.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/units/citizen/notice/Notice.container.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/units/citizen/notice/Notice.style.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/units/citizen/notice/Notice.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/units/citizen/notice/board/Board.container.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/units/citizen/notice/board/Board.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/units/citizen/helped/Helped.container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/units/citizen/helped/Helped.container.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/units/citizen/helped/board/Board.container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/units/citizen/helped/board/Board.container.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/units/citizen/helped/board/Board.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/units/citizen/helped/board/Board.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/units/citizen/notice/board/Board.container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/units/citizen/notice/board/Board.container.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +69,7 @@
       <updated>1690273322677</updated>
       <workItem from="1690273323722" duration="1516000" />
       <workItem from="1690274853160" duration="11323000" />
-      <workItem from="1690292424277" duration="54854000" />
+      <workItem from="1690292424277" duration="55424000" />
     </task>
     <servers />
   </component>
