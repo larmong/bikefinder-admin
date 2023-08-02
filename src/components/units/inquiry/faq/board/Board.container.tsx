@@ -8,6 +8,8 @@ import {
 } from "../../../../commons/boards/Board.types";
 import { IFetchFaq, IPropsInquiryFaqBoard } from "./Board.types";
 import { getDate } from "../../../../commons/utils/utils";
+import Modal01 from "../../../../commons/modals/modal01/Modal01.container";
+import FaqBoardDetail from "./detail/BoardDetail.container";
 
 export default function InquiryFaqBoard(props: IPropsInquiryFaqBoard) {
   const BOARD_DETAIL: IBoardDetail = {
@@ -74,6 +76,13 @@ export default function InquiryFaqBoard(props: IPropsInquiryFaqBoard) {
           />
         )}
       </S.BoardWrapper>
+      <Modal01
+        modalTitle="자주묻는질문 상세페이지"
+        isModal={props.isModal}
+        modalCurrentTarget={props.modalCurrentTarget}
+        modalToggle={props.modalToggle}
+        modalDetail={<FaqBoardDetail boardId={props.boardId} />}
+      />
     </S.Wrapper>
   );
 }

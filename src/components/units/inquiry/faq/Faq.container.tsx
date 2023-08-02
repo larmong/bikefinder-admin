@@ -38,6 +38,24 @@ export default function Faq() {
 
   const [tabNum, setTabNum] = useState<number>(0);
   const [fetchData, setFetchData] = useState<IFetchFaq[]>([]);
+  const [boardId, setBoardId] = useState("");
+  const [isModal, setIsModal] = useState(false);
+  const [contactData, setContactData] = useState("");
+
+  const modalToggle = () => {
+    setIsModal((prev: boolean) => !prev);
+  };
+
+  const modalCurrentTarget = (event: CustomMouseEvent) => {
+    if (isModal && event.target === event.currentTarget) {
+      modalToggle();
+    }
+  };
+
+  const onClickFaqDetail = (event: CustomMouseEvent) => {
+    setBoardId(event.currentTarget.id);
+    modalToggle();
+  };
 
   const getFaqData = async (index: number) => {
     try {
@@ -60,10 +78,6 @@ export default function Faq() {
   const onClickMoveToTabMenus = (index: number) => {
     setTabNum(index);
     void getFaqData(index);
-  };
-
-  const onClickFaqDetail = (event: CustomMouseEvent) => {
-    console.log(event.currentTarget.id);
   };
 
   useEffect(() => {
@@ -91,6 +105,10 @@ export default function Faq() {
           <InquiryFaqBoard
             fetchData={fetchData}
             onClickFaqDetail={onClickFaqDetail}
+            boardId={boardId}
+            isModal={isModal}
+            modalCurrentTarget={modalCurrentTarget}
+            modalToggle={modalToggle}
           />
         </Content>
       </Contents>
