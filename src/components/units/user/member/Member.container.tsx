@@ -30,9 +30,11 @@ export default function Member() {
   const [userStateType, setUserStateType] = useState<number>(0);
   const [boardId, setBoardId] = useState("");
   const [isModal, setIsModal] = useState(false);
+
   const modalToggle = () => {
     setIsModal((prev: boolean) => !prev);
   };
+
   const modalCurrentTarget = (event: CustomMouseEvent) => {
     if (isModal && event.target === event.currentTarget) {
       modalToggle();

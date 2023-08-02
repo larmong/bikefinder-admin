@@ -28,9 +28,22 @@ export default function Admin() {
   const [fetchBoard, setFetchBoard] = useState<IFetchMember[]>([]);
   const [filteredBoard, setFilteredBoard] = useState<IFetchMember[]>([]);
   const [userStateType, setUserStateType] = useState<number>(0);
+  const [boardId, setBoardId] = useState("");
+  const [isModal, setIsModal] = useState(false);
+
+  const modalToggle = () => {
+    setIsModal((prev: boolean) => !prev);
+  };
+
+  const modalCurrentTarget = (event: CustomMouseEvent) => {
+    if (isModal && event.target === event.currentTarget) {
+      modalToggle();
+    }
+  };
 
   const onClickUserDetail = (event: CustomMouseEvent) => {
-    console.log(event.currentTarget.id);
+    setBoardId(event.currentTarget.id);
+    modalToggle();
   };
 
   useEffect(() => {
@@ -76,6 +89,10 @@ export default function Admin() {
             USER_STATE_TYPE={USER_STATE_TYPE}
             setUserStateType={setUserStateType}
             onClickUserDetail={onClickUserDetail}
+            boardId={boardId}
+            isModal={isModal}
+            modalCurrentTarget={modalCurrentTarget}
+            modalToggle={modalToggle}
           />
         </S.Content>
       </S.Contents>
