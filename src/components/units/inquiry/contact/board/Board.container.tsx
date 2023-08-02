@@ -105,7 +105,7 @@ export default function ContactBoard(props: IPropsContactBoard) {
         )}
       </S.BoardWrapper>
       <Modal01
-        modalTitle="자주묻는질문 상세페이지"
+        modalTitle="일대일문의 상세페이지"
         isModal={props.isModal}
         modalCurrentTarget={props.modalCurrentTarget}
         modalToggle={props.modalToggle}

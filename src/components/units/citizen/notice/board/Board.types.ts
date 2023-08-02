@@ -14,4 +14,8 @@ export interface IPropsNoticeBoard {
   NOTICE_STATE_TYPE: IRadioData[];
   setNoticeStateType: (radioNum: number) => void;
   onClickNoticeDetail: (event: CustomMouseEvent) => void;
+  boardId: string;
+  isModal: boolean;
+  modalCurrentTarget: (event: CustomMouseEvent) => void;
+  modalToggle: (event: CustomMouseEvent) => void;
 }

@@ -9,6 +9,8 @@ import Radio02 from "../../../../commons/inputs/radio/radio02/Radio02.container"
 import Pagination01 from "../../../../commons/paginations/pagination01/Pagination01.container";
 import { useEffect, useState } from "react";
 import Button02 from "../../../../commons/buttons/button02/Button02.container";
+import Modal01 from "../../../../commons/modals/modal01/Modal01.container";
+import NoticeBoardDetail from "./detail/BoardDetail.container";
 
 export default function NoticeBoard(props: IPropsNoticeBoard) {
   const BOARD_DETAIL: IBoardDetail = {
@@ -102,6 +104,13 @@ export default function NoticeBoard(props: IPropsNoticeBoard) {
           />
         )}
       </S.BoardWrapper>
+      <Modal01
+        modalTitle="공지사항 상세페이지"
+        isModal={props.isModal}
+        modalCurrentTarget={props.modalCurrentTarget}
+        modalToggle={props.modalToggle}
+        modalDetail={<NoticeBoardDetail boardId={props.boardId} />}
+      />
     </S.Wrapper>
   );
 }

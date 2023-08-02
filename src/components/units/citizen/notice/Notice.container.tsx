@@ -29,9 +29,23 @@ export default function Notice() {
   const [fetchData, setFetchData] = useState<IFetchNotice[]>([]);
   const [filteredBoard, setFilteredBoard] = useState<IFetchNotice[]>([]);
   const [noticeStateType, setNoticeStateType] = useState<number>(0);
+  const [boardId, setBoardId] = useState("");
+  const [isModal, setIsModal] = useState(false);
+  const [contactData, setContactData] = useState("");
+
+  const modalToggle = () => {
+    setIsModal((prev: boolean) => !prev);
+  };
+
+  const modalCurrentTarget = (event: CustomMouseEvent) => {
+    if (isModal && event.target === event.currentTarget) {
+      modalToggle();
+    }
+  };
 
   const onClickNoticeDetail = (event: CustomMouseEvent) => {
-    console.log(event.currentTarget.id);
+    setBoardId(event.currentTarget.id);
+    modalToggle();
   };
 
   useEffect(() => {
@@ -76,6 +90,10 @@ export default function Notice() {
             NOTICE_STATE_TYPE={NOTICE_STATE_TYPE}
             setNoticeStateType={setNoticeStateType}
             onClickNoticeDetail={onClickNoticeDetail}
+            boardId={boardId}
+            isModal={isModal}
+            modalCurrentTarget={modalCurrentTarget}
+            modalToggle={modalToggle}
           />
         </Content>
       </Contents>
