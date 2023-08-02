@@ -1,5 +1,6 @@
 import { CustomMouseEvent } from "../../../../commons/types/global.types";
 import { IRadioData } from "../../../commons/inputs/radio/radio02/Radio02.types";
+import { IPropsModalTitle } from "../../../commons/modals/modal01/Modal01.types";
 
 export interface IFetchMember {
   id?: string;
@@ -41,4 +42,5 @@ export interface IPropsMemberBoard {
   isModal: boolean;
   modalToggle: (event: CustomMouseEvent) => void;
   modalCurrentTarget: (event: CustomMouseEvent) => void;
+  modalTitle: IPropsModalTitle;
 }

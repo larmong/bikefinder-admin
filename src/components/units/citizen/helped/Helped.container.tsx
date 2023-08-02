@@ -6,11 +6,17 @@ import { useEffect, useState } from "react";
 import { Content, Contents, Title } from "../../dashboard/Dashboard.style";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import HelpedBoard from "./board/Board.container";
+import { HiDocumentText } from "react-icons/hi";
 
 export default function Helped() {
   const [fetchData, setFetchData] = useState<IFetchHelped[]>([]);
   const [boardId, setBoardId] = useState("");
   const [isModal, setIsModal] = useState(false);
+
+  const modalTitle = {
+    icon: <HiDocumentText />,
+    title: "협력업체",
+  };
 
   const modalToggle = () => {
     setIsModal((prev: boolean) => !prev);
@@ -55,6 +61,7 @@ export default function Helped() {
         </Title>
         <Content>
           <HelpedBoard
+            modalTitle={modalTitle}
             fetchData={fetchData}
             onClickHelpedDetail={onClickHelpedDetail}
             boardId={boardId}

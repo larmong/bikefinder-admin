@@ -6,6 +6,7 @@ import { db } from "../../../../commons/libraries/firebase/firebase.config";
 import { CustomMouseEvent } from "../../../../commons/types/global.types";
 import { IFetchNotice } from "./board/Board.types";
 import NoticeBoard from "./board/Board.container";
+import { HiDocumentText } from "react-icons/hi";
 
 export default function Notice() {
   const NOTICE_STATE_TYPE = [
@@ -26,12 +27,16 @@ export default function Notice() {
     },
   ];
 
+  const modalTitle = {
+    icon: <HiDocumentText />,
+    title: "공지사항",
+  };
+
   const [fetchData, setFetchData] = useState<IFetchNotice[]>([]);
   const [filteredBoard, setFilteredBoard] = useState<IFetchNotice[]>([]);
   const [noticeStateType, setNoticeStateType] = useState<number>(0);
   const [boardId, setBoardId] = useState("");
   const [isModal, setIsModal] = useState(false);
-  const [contactData, setContactData] = useState("");
 
   const modalToggle = () => {
     setIsModal((prev: boolean) => !prev);
@@ -86,6 +91,7 @@ export default function Notice() {
         </Title>
         <Content>
           <NoticeBoard
+            modalTitle={modalTitle}
             fetchData={filteredBoard}
             NOTICE_STATE_TYPE={NOTICE_STATE_TYPE}
             setNoticeStateType={setNoticeStateType}

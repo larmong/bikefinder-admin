@@ -1,4 +1,5 @@
 import { CustomMouseEvent } from "../../../../../commons/types/global.types";
+import { IPropsModalTitle } from "../../../../commons/modals/modal01/Modal01.types";
 
 export interface IFetchHelped {
   id?: string;
@@ -9,6 +10,7 @@ export interface IFetchHelped {
 }
 
 export interface IPropsHelpedBoard {
+  modalTitle: IPropsModalTitle;
   fetchData: IFetchHelped[];
   onClickHelpedDetail: (event: CustomMouseEvent) => void;
   boardId: string;

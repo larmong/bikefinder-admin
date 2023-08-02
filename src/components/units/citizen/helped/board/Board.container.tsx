@@ -78,7 +78,8 @@ export default function HelpedBoard(props: IPropsHelpedBoard) {
         )}
       </S.BoardWrapper>
       <Modal01
-        modalTitle="협력업체 상세페이지"
+        modalIcon={props.modalTitle.icon}
+        modalTitle={props.modalTitle.title}
         isModal={props.isModal}
         modalCurrentTarget={props.modalCurrentTarget}
         modalToggle={props.modalToggle}

@@ -1,5 +1,6 @@
 import { CustomMouseEvent } from "../../../../../commons/types/global.types";
 import { IRadioData } from "../../../../commons/inputs/radio/radio02/Radio02.types";
+import { IPropsModalTitle } from "../../../../commons/modals/modal01/Modal01.types";
 
 export interface IFetchContact {
   id?: string;
@@ -21,4 +22,5 @@ export interface IPropsContactBoard {
   modalCurrentTarget: (event: CustomMouseEvent) => void;
   modalToggle: (event: CustomMouseEvent) => void;
   onChangeContent: (value: string) => void;
+  modalTitle: IPropsModalTitle;
 }

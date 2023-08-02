@@ -7,6 +7,7 @@ import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { ITabMenu } from "./Faq.types";
 import { IFetchFaq } from "./board/Board.types";
 import { CustomMouseEvent } from "../../../../commons/types/global.types";
+import { HiDocumentSearch } from "react-icons/hi";
 
 export default function Faq() {
   const TAB_MENUS: ITabMenu[] = [
@@ -35,6 +36,11 @@ export default function Faq() {
       name: "앱 또는 홈페이지 문의",
     },
   ];
+
+  const modalTitle = {
+    icon: <HiDocumentSearch />,
+    title: "자주묻는질문",
+  };
 
   const [tabNum, setTabNum] = useState<number>(0);
   const [fetchData, setFetchData] = useState<IFetchFaq[]>([]);
@@ -103,6 +109,7 @@ export default function Faq() {
             ))}
           </S.Tab>
           <InquiryFaqBoard
+            modalTitle={modalTitle}
             fetchData={fetchData}
             onClickFaqDetail={onClickFaqDetail}
             boardId={boardId}

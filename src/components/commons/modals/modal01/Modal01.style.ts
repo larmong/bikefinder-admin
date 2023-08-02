@@ -39,11 +39,19 @@ export const ModalTop = styled.div`
   margin: 10px 0;
 `;
 
-export const ModalTitle = styled.h4`
-  font-size: 30px;
-  margin-left: 5px;
+export const Title = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
-export const Contents = styled.div`
-  margin-top: 20px;
+export const ModalIcon = styled.div`
+  margin-left: 5px;
+  font-size: 40px;
 `;
+
+export const ModalTitle = styled.h4`
+  font-size: 30px;
+  margin: 0 0 10px 5px;
+`;
+
+export const Contents = styled.div``;

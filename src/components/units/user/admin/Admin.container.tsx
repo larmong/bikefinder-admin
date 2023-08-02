@@ -5,6 +5,7 @@ import { db } from "../../../../commons/libraries/firebase/firebase.config";
 import { CustomMouseEvent } from "../../../../commons/types/global.types";
 import MemberBoard from "../board/Board.container";
 import { IFetchMember } from "../board/Board.types";
+import { RiFileUserFill } from "react-icons/ri";
 
 export default function Admin() {
   const USER_STATE_TYPE = [
@@ -24,6 +25,11 @@ export default function Admin() {
       checkedState: false,
     },
   ];
+
+  const modalTitle = {
+    icon: <RiFileUserFill />,
+    title: "관리자",
+  };
 
   const [fetchBoard, setFetchBoard] = useState<IFetchMember[]>([]);
   const [filteredBoard, setFilteredBoard] = useState<IFetchMember[]>([]);
@@ -85,6 +91,7 @@ export default function Admin() {
         </S.Title>
         <S.Content>
           <MemberBoard
+            modalTitle={modalTitle}
             boardData={filteredBoard}
             USER_STATE_TYPE={USER_STATE_TYPE}
             setUserStateType={setUserStateType}

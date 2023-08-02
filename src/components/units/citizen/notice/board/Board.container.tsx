@@ -105,7 +105,8 @@ export default function NoticeBoard(props: IPropsNoticeBoard) {
         )}
       </S.BoardWrapper>
       <Modal01
-        modalTitle="공지사항 상세페이지"
+        modalIcon={props.modalTitle.icon}
+        modalTitle={props.modalTitle.title}
         isModal={props.isModal}
         modalCurrentTarget={props.modalCurrentTarget}
         modalToggle={props.modalToggle}

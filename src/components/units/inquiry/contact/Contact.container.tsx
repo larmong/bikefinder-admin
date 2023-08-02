@@ -6,6 +6,7 @@ import { CustomMouseEvent } from "../../../../commons/types/global.types";
 import ContactBoard from "./board/Board.container";
 import { Wrapper } from "./Contact.style";
 import { IFetchContact } from "./board/Board.types";
+import { HiDocumentSearch } from "react-icons/hi";
 
 export default function Contact() {
   const FAQ_STATE_TYPE = [
@@ -25,6 +26,11 @@ export default function Contact() {
       checkedState: false,
     },
   ];
+
+  const modalTitle = {
+    icon: <HiDocumentSearch />,
+    title: "일대일문의",
+  };
 
   const [fetchBoard, setFetchBoard] = useState<IFetchContact[]>([]);
   const [filteredBoard, setFilteredBoard] = useState<IFetchContact[]>([]);
@@ -91,6 +97,7 @@ export default function Contact() {
         </Title>
         <Content>
           <ContactBoard
+            modalTitle={modalTitle}
             FAQ_STATE_TYPE={FAQ_STATE_TYPE}
             fetchData={filteredBoard}
             setFaqStateType={setFaqStateType}

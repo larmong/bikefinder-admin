@@ -5,6 +5,7 @@ import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "../../../../commons/libraries/firebase/firebase.config";
 import { IFetchMember } from "../board/Board.types";
 import { CustomMouseEvent } from "../../../../commons/types/global.types";
+import { RiFileUserFill } from "react-icons/ri";
 
 export default function Member() {
   const USER_STATE_TYPE = [
@@ -24,6 +25,11 @@ export default function Member() {
       checkedState: false,
     },
   ];
+
+  const modalTitle = {
+    icon: <RiFileUserFill />,
+    title: "일반회원",
+  };
 
   const [fetchBoard, setFetchBoard] = useState<IFetchMember[]>([]);
   const [filteredBoard, setFilteredBoard] = useState<IFetchMember[]>([]);
@@ -93,6 +99,7 @@ export default function Member() {
             isModal={isModal}
             modalCurrentTarget={modalCurrentTarget}
             modalToggle={modalToggle}
+            modalTitle={modalTitle}
           />
         </S.Content>
       </S.Contents>
