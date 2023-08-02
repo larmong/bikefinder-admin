@@ -37,4 +37,8 @@ export interface IPropsMemberBoard {
   USER_STATE_TYPE: IRadioData[];
   setUserStateType: (radioNum: number) => void;
   onClickUserDetail: (event: CustomMouseEvent) => void;
+  boardId: string;
+  isModal: boolean;
+  modalToggle: (event: CustomMouseEvent) => void;
+  modalCurrentTarget: (event: CustomMouseEvent) => void;
 }

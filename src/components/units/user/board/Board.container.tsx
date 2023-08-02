@@ -9,6 +9,8 @@ import {
 import { IFetchMember, IPropsMemberBoard } from "./Board.types";
 import Button02 from "../../../commons/buttons/button02/Button02.container";
 import { getPhone } from "../../../commons/utils/utils";
+import Modal01 from "../../../commons/modals/modal01/Modal01.container";
+import MemberBoardDetail from "./detail/BoardDetail.container";
 
 export default function MemberBoard(props: IPropsMemberBoard) {
   const BOARD_DETAIL: IBoardDetail = {
@@ -101,6 +103,13 @@ export default function MemberBoard(props: IPropsMemberBoard) {
           />
         )}
       </S.BoardWrapper>
+      <Modal01
+        modalTitle="회원 상세페이지"
+        isModal={props.isModal}
+        modalCurrentTarget={props.modalCurrentTarget}
+        modalToggle={props.modalToggle}
+        modalDetail={<MemberBoardDetail boardId={props.boardId} />}
+      />
     </S.Wrapper>
   );
 }

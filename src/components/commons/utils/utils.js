@@ -15,3 +15,11 @@ export const getPhone = (phoneNum) => {
 
   return `${first}-${second}-${third}`;
 };
+
+export const getBirth = (date) => {
+  const yyyy = date.slice(0, 4);
+  const mm = date.slice(4, 6);
+  const dd = date.slice(6, 8);
+
+  return `${yyyy}-${mm}-${dd}`;
+};
